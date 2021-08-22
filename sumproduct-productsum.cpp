@@ -1,5 +1,5 @@
 /*
-    This Program Use Lexical an Sintatical Analysis to validate an product sum or sum product expression.
+    This Program Use Lexical an Sintatical Analysis to validate a product sum or sum product expression.
 */
 
 // How to Compile "g++ sumproduct-productsum.cpp -o exec -O2 -Wall -std=c++17"
