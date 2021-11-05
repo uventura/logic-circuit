@@ -132,9 +132,28 @@ for hexInst in composerInstruction:
     print('0x'+hexInst[0],hexInst[1])
     
 # Generate ROM's file
-'''
+head =\
+"""#------------------------------------------------------------'
+#- Deeds (Digital Electronics Education and Design Suite)
+#- Rom Contents Saved on (11/3/2021, 10:50:24 PM)
+#-      by Deeds (Digital Circuit Simulator)(Deeds-DcS)
+#-      Ver. 2.41.150 (July 14, 2021)
+#- Copyright (c) 2002-2021 University of Genoa, Italy
+#-      Web Site:  https://www.digitalelectronicsdeeds.com
+#------------------------------------------------------------
+#R ROM1Kx16, id 0019
+#- Deeds Rom Source Format (*.drs)
+
+#A 0000h
+#H
+
+"""
+
 instFile = open('output/'+programName+'_INST.drs','w')
 immFile = open('output/'+programName+'_IMM.drs','w')
+
+instFile.write(head)
+immFile.write(head)
 
 print('')
 columnsNumber = int(input("Type the column's number from your ROM:"))
@@ -178,4 +197,4 @@ immFile.close()
 print("\nROM's File Created!!")
 
 conta = 0
-file = open('')'''
+file = open('')
