@@ -132,20 +132,22 @@ for hexInst in composerInstruction:
     print('0x'+hexInst[0],hexInst[1])
     
 # Generate ROM's file
-'''
 instFile = open('output/'+programName+'_INST.drs','w')
 immFile = open('output/'+programName+'_IMM.drs','w')
 
-numberColumns = int(input("Type the column's number from your ROM:"))
+print('')
+columnsNumber = int(input("Type the column's number from your ROM:"))
 columnCounter = 0
 lineCounter = 0
+totalCells = 0
 
 for inst in composerInstruction:   
     instFile.write(inst[1])
     immFile.write(inst[0])
     
     columnCounter += 1
-    if columnCounter == numberColumns-1:
+    totalCells += 1
+    if columnCounter == columnsNumber:
         columnCounter = 0
         lineCounter += 1
         
@@ -154,11 +156,22 @@ for inst in composerInstruction:
     else:
         instFile.write(' ')
         immFile.write(' ')
-        
+
 linesNumber = int(input("Type the line's number from your ROM: "))
-for i in range(lineCounter, linesNumber):
-    
+for i in range(totalCells, (linesNumber-lineCounter)*columnsNumber):
+    instFile.write('FFFF')
+    immFile.write('FFFF')
+    columnCounter += 1
+    if columnCounter == columnsNumber:
+        columnCounter = 0
+        lineCounter += 1
+        
+        instFile.write('\n')
+        immFile.write('\n')
+    else:
+        instFile.write(' ')
+        immFile.write(' ')
 
 instFile.close()
 immFile.close()
-print("\nROM's File Created!!")'''
+print("\nROM's File Created!!")
