@@ -178,7 +178,7 @@ for inst in composerInstruction:
         immFile.write(' ')
 
 linesNumber = int(input("Type the line's number from your ROM: "))
-for i in range(totalCells, (linesNumber-lineCounter-1)*columnsNumber):
+for i in range(totalCells, (int(linesNumber/columnsNumber)-lineCounter)*columnsNumber):
     instFile.write('FFFF')
     immFile.write('FFFF')
     columnCounter += 1
@@ -197,4 +197,3 @@ immFile.close()
 print("\nROM's File Created!!")
 
 conta = 0
-file = open('')
