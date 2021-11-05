@@ -132,6 +132,7 @@ for hexInst in composerInstruction:
     print('0x'+hexInst[0],hexInst[1])
     
 # Generate ROM's file
+'''
 instFile = open('output/'+programName+'_INST.drs','w')
 immFile = open('output/'+programName+'_IMM.drs','w')
 
@@ -158,7 +159,7 @@ for inst in composerInstruction:
         immFile.write(' ')
 
 linesNumber = int(input("Type the line's number from your ROM: "))
-for i in range(totalCells, (linesNumber-lineCounter)*columnsNumber):
+for i in range(totalCells, (linesNumber-lineCounter-1)*columnsNumber):
     instFile.write('FFFF')
     immFile.write('FFFF')
     columnCounter += 1
@@ -175,3 +176,6 @@ for i in range(totalCells, (linesNumber-lineCounter)*columnsNumber):
 instFile.close()
 immFile.close()
 print("\nROM's File Created!!")
+
+conta = 0
+file = open('')'''
